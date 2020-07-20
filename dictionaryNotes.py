@@ -8,6 +8,7 @@ parser.add_argument('--new')
 parser.add_argument('--output')
 
 args = parser.parse_args()
+os.remove(args.output)
 
 def isDifferent(dict1,dict2,it = 0,truth = False,*args):
     done = False
