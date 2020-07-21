@@ -8,7 +8,9 @@ parser.add_argument('--new')
 parser.add_argument('--output')
 
 args = parser.parse_args()
-os.remove(args.output)
+
+if os.path.exists(args.output):
+    os.remove(args.output)
 
 def isDifferent(dict1,dict2,it = 0,truth = False,*args):
     done = False
@@ -115,8 +117,7 @@ def findDifferences(dict1,dict2,it = 0,*args):
 
 
 
-os.listdir(args.new + '/gdcdictionary/schemas')
-os.path.basename(args.new + '/gdcdictionary/schemas/exposure.yaml') in os.listdir(args.new + '/gdcdictionary/schemas')
+
 
 for schema in os.listdir(args.new + '/gdcdictionary/schemas'):
     if schema[0]!='_' and schema[-2:]=='ml':
